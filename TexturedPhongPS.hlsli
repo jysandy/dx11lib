@@ -186,6 +186,9 @@ ComputedColor computeSpotColor(float3 normal, float3 toEye, float3 vertex, Spotl
 
 float4 pixelShader(PixelShaderInput input)
 {
+	float4 texColor = Texture.Sample(s, input.texcoord);
+	clip(texColor.a - 0.1);
+
 	float3 normal;
 	normal = normalize(input.normal);
 
@@ -238,7 +241,6 @@ float4 pixelShader(PixelShaderInput input)
 		result.specular = saturate(result.specular);
 	}
 
-	float4 texColor = Texture.Sample(s, input.texcoord);
 	float4 litColor;
 	litColor = texColor * (result.ambient + result.diffuse) + result.specular;
 	litColor = saturate(litColor);
