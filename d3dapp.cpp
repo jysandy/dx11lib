@@ -309,7 +309,7 @@ namespace D3dtut
 
 		this->deviceContext->RSSetViewports(1, &this->screenViewport);
 
-		auto foo = DirectX::XMMatrixPerspectiveFovLH(DirectX::XM_PIDIV4, this->AspectRatio(), 1.0f, 1000.0f);
+		auto foo = DirectX::XMMatrixPerspectiveFovLH(DirectX::XM_PIDIV4, this->AspectRatio(), 1.0f, 100000.0f);
 		DirectX::XMStoreFloat4x4(&projectionMatrix, foo);
 	}
 
