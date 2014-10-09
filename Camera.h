@@ -22,7 +22,7 @@ namespace D3dtut
 
 	private:
 		const float mouseSensitivity = 0.004f;
-		const float velocity = 20.0f;
+		const float velocity = 80.0f;
 
 		DirectX::XMFLOAT4X4 viewMatrix;
 		DirectX::XMFLOAT3 position;
